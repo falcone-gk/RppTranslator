@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Inicio</title>
+{% endblock %}
+
+{% block body %}
+<div class="title-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Rpp News Translator</h1>
+    <p class="lead">This is a news translator from Rpp webpage which content is in spanish so an english speaker can read the news in english by inserting the url below.</p>
+    <form method="POST">
+        <div class="row">
+            <div class="col-sm-10">
+                <input class="form-control" placeholder="Enter URL">
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Translate</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 col-md-4 col-sm-4 container justify-content-center">
+        <h2>Translation</h2>
+    </div>
+</div>
+{% endblock %}

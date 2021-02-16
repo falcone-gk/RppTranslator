@@ -8,10 +8,10 @@
 <div class="title-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Rpp News Translator</h1>
     <p class="lead">This is a news translator from Rpp webpage which content is in spanish so an english speaker can read the news in english by inserting the url below.</p>
-    <form method="POST">
+    <form action="/" method="POST">
         <div class="row">
-            <div class="col-sm-10">
-                <input class="form-control" placeholder="Enter URL">
+            <div class="col-sm-10 pb-2">
+                <input class="form-control" placeholder="Enter URL" name='url'>
             </div>
             <div class="col-sm-2">
                 <button type="submit" class="btn btn-primary">Translate</button>
@@ -21,8 +21,17 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8 col-md-4 col-sm-4 container justify-content-center">
-        <h2>Translation</h2>
+    <div class="title-header container justify-content-center">
+        {% if is_scraped %}
+            <h2 class="my-3">Translation</h2>
+            <h4>{{data.title}}</h4>
+            <p>{{data.summary}}</p>
+            <p>{{data.date}}</p>
+            <img src={{data.img_url}} class="img-fluid mb-3" alt="Responsive image">
+            {% for p in data.body %}
+                <p>{{p}}</p>
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}
